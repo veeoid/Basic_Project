@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Heart, Send, Sparkles } from 'lucide-react';
+import React, { useState } from "react";
+import { Heart, Send, Sparkles } from "lucide-react";
 
 function App() {
   const [step, setStep] = useState(0);
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
   const [showProposal, setShowProposal] = useState(false);
   const [showThinking, setShowThinking] = useState(false);
   const [accepted, setAccepted] = useState(false);
@@ -16,9 +16,12 @@ function App() {
   };
 
   const messages = [
-    "I promise to always laugh at your jokes... even the bad ones.",
-    "I'll share my fries with you, and that's true love.",
-    "They say dating me is a once-in-a-lifetime opportunity... literally, because I won't ask twice."
+    "Disclaimer: Just gonna start off by saying I'm not great at this whole 'feelings' thingy.",
+    "But I can make you laugh, and that's pretty much the same thing, right?",
+    "Happy Valentine’s Day! I was going to get you something amazing, but then I remembered…. you already have ME!",
+    "You're purr-fect for me and I’m not a cheetah either. I’m not lion when I say I love you.",
+    "Just to redeem myself here's a cheesy pick-up line: Are you a magician? Because whenever I look at you, everyone else disappears.",
+    "Now that I've got your attention, I have a question for you...",
   ];
 
   if (accepted) {
@@ -27,7 +30,7 @@ function App() {
         <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-auto text-center space-y-6">
           <h2 className="text-3xl font-serif text-gray-800">Woohoo! 🎉</h2>
           <p className="text-xl text-gray-600">Best decision ever!</p>
-          <img 
+          <img
             src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
             alt="Excited cat dancing"
             className="w-full rounded-lg shadow-md"
@@ -43,10 +46,15 @@ function App() {
       {!showProposal ? (
         <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-auto">
           <Heart className="w-8 h-8 text-rose-500 mx-auto mb-6" />
-          <h1 className="text-2xl font-serif text-center text-gray-800 mb-6">A Special Invitation</h1>
+          <h1 className="text-2xl font-serif text-center text-gray-800 mb-6">
+            A Special Invitation
+          </h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
                 May I know your name?
               </label>
               <input
@@ -71,9 +79,7 @@ function App() {
         <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full mx-auto">
           <div className="text-center space-y-6">
             <h2 className="text-3xl font-serif text-gray-800">Dear {name},</h2>
-            <p className="text-gray-600 leading-relaxed">
-              {messages[step]}
-            </p>
+            <p className="text-gray-600 leading-relaxed">{messages[step]}</p>
             {step < messages.length - 1 ? (
               <button
                 onClick={() => setStep(step + 1)}
@@ -85,14 +91,14 @@ function App() {
             ) : (
               <div className="space-y-4">
                 <p className="text-xl font-serif text-gray-800">
-                  Would you be my Valentine?
+                  My Favorite Human, would you be my Valentine?
                 </p>
                 {showThinking ? (
                   <div className="space-y-4 animate-bounce">
                     <p className="text-gray-600 italic">
                       Nice try! But this is a one-button situation 😉
                     </p>
-                    <button 
+                    <button
                       className="bg-rose-500 text-white py-2 px-6 rounded-md hover:bg-rose-600 transition-colors inline-flex items-center gap-2"
                       onClick={() => setShowThinking(false)}
                     >
@@ -102,13 +108,13 @@ function App() {
                   </div>
                 ) : (
                   <div className="flex gap-4 justify-center">
-                    <button 
+                    <button
                       className="bg-rose-500 text-white py-2 px-6 rounded-md hover:bg-rose-600 transition-colors"
                       onClick={() => setAccepted(true)}
                     >
                       Yes
                     </button>
-                    <button 
+                    <button
                       className="bg-gray-100 text-gray-600 py-2 px-6 rounded-md hover:bg-gray-200 transition-colors"
                       onClick={() => setShowThinking(true)}
                     >
